@@ -129,19 +129,19 @@
                     html += "<td>" + ddmmyyyy(_.get(e, col)) + "</td>";
                 } else if (col == "comission") {
                     var comission = _.get(e, "comission");
-                    if(comission){
-                    var price = _.get(e, "price");
-                    var qty = _.get(e, "qty");
-                    var grandTotal = price * qty;
-                    var commisisonToArtist = (grandTotal * comission) / 100;
-                    html += "<td>USD " + commisisonToArtist + " (" + _.get(e, "comission") + "%)</td>";
-                    }else{
+                    if (comission) {
+                        var price = _.get(e, "price");
+                        var qty = _.get(e, "qty");
+                        var grandTotal = price * qty;
+                        var commisisonToArtist = (grandTotal * comission) / 100;
+                        html += "<td>USD " + commisisonToArtist + " (" + _.get(e, "comission") + "%)</td>";
+                    } else {
                         html += "<td>-</td>";
                     }
                 } else if (col == "featured_art") {
                     html += "<td><a href='javascript:void(0);' onclick='_add_art_call(" + e.id + ")'>Add to Featured</a></td>";
                 } else if (col == "coa") {
-                    html += "<td><a target='_blank' href='/product/coa.php?id="+_.get(e, "id")+"'>Download COA</a></td>";
+                    html += "<td><a target='_blank' href='/product/coa.php?id=" + _.get(e, "id") + "'>Download COA</a></td>";
                 } else if (col == "featured_artist" && _.get(e, "roleType") == "Artist") {
                     html += "<td><a href='javascript:void(0);' onclick='_add_artist_call(" + e.id + ")'>Add to Featured</a></td>";
                 } else if (col == "featured_artist" && _.get(e, "roleType") != "Artist") {
@@ -180,22 +180,22 @@
 
                     var selVal = _.get(e, "orderStatus");
 
-                    var PSC = (selVal == "PENDING FOR SHIPPING CHARGES") ? 'selected' : '' ;
-                    var PFP = (selVal == "PENDING FOR PAYMENT") ? 'selected' : '' ;
-                    var CONF = (selVal == "CONFIRMED") ? 'selected' : '' ;
-                    var ACC = (selVal == "ACCEPTED") ? 'selected' : '' ;
-                    var SHIP = (selVal == "SHIPPED") ? 'selected' : '' ;
-                    var DL = (selVal == "DELIVERED") ? 'selected' : '' ;
+                    var PSC = (selVal == "PENDING FOR SHIPPING CHARGES") ? 'selected' : '';
+                    var PFP = (selVal == "PENDING FOR PAYMENT") ? 'selected' : '';
+                    var CONF = (selVal == "CONFIRMED") ? 'selected' : '';
+                    var ACC = (selVal == "ACCEPTED") ? 'selected' : '';
+                    var SHIP = (selVal == "SHIPPED") ? 'selected' : '';
+                    var DL = (selVal == "DELIVERED") ? 'selected' : '';
 
                     html += "<td>";
-                    html +='<select class="form-control" id="orderStatus' + idx + '" >';
-                    html +='<option value="PENDING FOR SHIPPING CHARGES" ' + PSC + '>PENDING FOR SHIPPING CHARGES</option>' ;
-                    html +='<option value="PENDING FOR PAYMENT" ' + PFP + '>PENDING FOR PAYMENT</option>' ;
-                    html +='<option value="CONFIRMED" ' + CONF + '>CONFIRMED</option>' ;
-                    html +='<option value="ACCEPTED" ' + ACC + '>ACCEPTED</option>' ;
-                    html +='<option value="SHIPPED" ' + SHIP + '>SHIPPED</option>' ;
-                    html +='<option value="DELIVERED" ' + DL + '>DELIVERED</option>';
-                    html +='</select>';
+                    html += '<select class="form-control" id="orderStatus' + idx + '" >';
+                    html += '<option value="PENDING FOR SHIPPING CHARGES" ' + PSC + '>PENDING FOR SHIPPING CHARGES</option>';
+                    html += '<option value="PENDING FOR PAYMENT" ' + PFP + '>PENDING FOR PAYMENT</option>';
+                    html += '<option value="CONFIRMED" ' + CONF + '>CONFIRMED</option>';
+                    html += '<option value="ACCEPTED" ' + ACC + '>ACCEPTED</option>';
+                    html += '<option value="SHIPPED" ' + SHIP + '>SHIPPED</option>';
+                    html += '<option value="DELIVERED" ' + DL + '>DELIVERED</option>';
+                    html += '</select>';
                     html += "</td>";
                 } else if (col == "shippingAmount" && _.get(e, col) == "0") {
                     html += "<td><div class='row'><div class='col-md-12'><input class='form-control' min='0' onkeypress='return event.charCode >= 48' shippingAmount col-md-5' id='shippingAmount" + idx + "' name='shippingAmount' type='number' placeholder='Enter No' value='" + _.get(e, "shippingAmount") + "'/>";
@@ -278,13 +278,9 @@
             mm = '0' + mm;
         }
         //today = mm + '-' + dd + '-' + yyyy;
-        //console.log(today);
+
         today = `${dd}${delimitor}${mm}${delimitor}${yyyy}`;
-        //console.log(today);
-        //today = dd + '-' + mm + '-' + yyyy;
-        //console.log(today);
-        //today = dd + '/' + mm + '/' + yyyy;
-        //console.log(today);
+
 
         return today;
     }

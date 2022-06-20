@@ -7,8 +7,8 @@
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <?php foreach($breadcrumbs as $breadcrumb) ?>
-                        <li class="breadcrumb-item <?php ($breadcrumb===$breadcrumbActive)?'active':'' ?>"><?php echo $breadcrumb ?></li>
+                    <?php foreach ($breadcrumbs as $breadcrumb) ?>
+                    <li class="breadcrumb-item <?php ($breadcrumb === $breadcrumbActive) ? 'active' : '' ?>"><?php echo $breadcrumb ?></li>
                     <?php ?>
                 </ol>
             </div>

@@ -124,8 +124,8 @@
     }
 
     function toUser(res) {
-      console.log(res);
-      if(res.code!=200){
+
+      if (res.code != 200) {
         alert(res.errorMessage);
         return;
       }

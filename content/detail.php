@@ -22,7 +22,7 @@
       <!-- Main content -->
       <section class="content">
         <div class="container-fluid">
-        
+
           <div class="row mt-4">
             <!-- left column -->
             <div class="col-md-12">
@@ -41,14 +41,14 @@
 
                   <div class="card-body">
 
-                    
+
                     <div class="form-group">
                       <label for="content">Content</label>
                       <textarea name="editor1" class="form-control" id="content" placeholder="content" rows="15" required>
                       </textarea>
                     </div>
 
-                 
+
                     <!-- <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
@@ -83,7 +83,7 @@
     let fileUpload;
 
     $('form#addEdit').submit(function(e) {
-      console.log('form')
+
       e.preventDefault();
       // or return false;
       validateData(e);
@@ -96,8 +96,8 @@
     }
 
     function toProduct(res) {
-      console.log(res);
-      if(res.code!=200){
+
+      if (res.code != 200) {
         alert(res.errorMessage);
         return;
       }
@@ -112,7 +112,7 @@
       __ajax_http("content/" + pkId, null, [], "GET", "auction", function(res) {
         $("#content").val(res.data.fetch.content);
 
-        CKEDITOR.replace( 'editor1' );
+        CKEDITOR.replace('editor1');
       });
 
     }
@@ -123,12 +123,12 @@
 
       var data = {
         content: CKEDITOR.instances.content.getData(),
-        _content:Date.now(),
+        _content: Date.now(),
       };
 
       if (pkId) {
         data.id = pkId;
-        data.isUpdate=1;
+        data.isUpdate = 1;
         __ajax_http("content/" + pkId, data, [], "PUT", "content", toProduct);
       } else {
         __ajax_http("content", data, [], "POST", "content", toProduct);
@@ -140,7 +140,7 @@
       getData();
     }
   </script>
-<script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
+  <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
 </body>
 
 </html>

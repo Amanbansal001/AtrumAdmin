@@ -79,7 +79,7 @@
     }
 
     function toUser(res) {
-      console.log(res);
+
       history.back();
     }
 
@@ -100,13 +100,13 @@
       var pkId = getParameterByName("id");
 
       var data = {
-        name:$("#name").val(),
-        state_id:'<?php echo $_GET['state_id'];?>'
+        name: $("#name").val(),
+        state_id: '<?php echo $_GET['state_id']; ?>'
       };
 
       if (pkId) {
         data.id = pkId;
-        data.isUpdate=1;
+        data.isUpdate = 1;
         __ajax_http("city/" + pkId, data, [], "PUT", "country", toUser);
       } else {
         __ajax_http("city", data, [], "POST", "country", toUser);

@@ -61,7 +61,7 @@
                     <img src="/assets/dist/img/signature.jpg" height="70px" alt="">
                 </td>
                 <td style="padding: 8px; vertical-align: top; ">ARTIST'S SIGNATURE
-                    <br/><img id="artistSign" src="" height="70px" alt="">
+                    <br /><img id="artistSign" src="" height="70px" alt="">
                 </td>
             </tr>
 
@@ -78,41 +78,43 @@
     }
 
     function getData() {
-      var pkId = getParameterByName("id");
-      if (pkId == null) {
-        return
-      }
-
-      __ajax_http("products/" + pkId, null, [], "GET", "product", function(res) {
-
-        res = res.data.fetch;
-
-        $("#dop").html(res.dateOfProduction);
-        $("#dpurchase").html(res.dateOfProduction);
-        $("#medium").html(res.medium);
-        
-
-        if(res.productImage){
-            $("#artworkImage").attr('src',res.productImage);
+        var pkId = getParameterByName("id");
+        if (pkId == null) {
+            return
         }
-        
-        if(res.signature){
-            $("#artistSign").attr('src',res.signature);
-        }
-        
-        $("#artworkName").html(res.productName);
-        $("#edition").html(res.edition);
-        $("#dimension").html(res.length +"cm x "+res.height +"cm ");
-        $("#artistName").html(res.user.name);
+
+        __ajax_http("products/" + pkId, null, [], "GET", "product", function(res) {
+
+            res = res.data.fetch;
+
+            $("#dop").html(res.dateOfProduction);
+            $("#dpurchase").html(res.dateOfProduction);
+            $("#medium").html(res.medium);
 
 
-        setTimeout(()=>{
-            window.onafterprint = window.close;
-            window.print()
-            window.onfocus=function(){ window.close();}
-        },500)
+            if (res.productImage) {
+                $("#artworkImage").attr('src', res.productImage);
+            }
 
-      });
+            if (res.signature) {
+                $("#artistSign").attr('src', res.signature);
+            }
+
+            $("#artworkName").html(res.productName);
+            $("#edition").html(res.edition);
+            $("#dimension").html(res.length + "cm x " + res.height + "cm ");
+            $("#artistName").html(res.user.name);
+
+
+            setTimeout(() => {
+                window.onafterprint = window.close;
+                window.print()
+                window.onfocus = function() {
+                    window.close();
+                }
+            }, 500)
+
+        });
 
     }
 </script>

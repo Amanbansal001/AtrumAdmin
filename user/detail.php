@@ -59,9 +59,7 @@
                                                                                                                       } ?>>
                           <label class="custom-file-label" for="profilePic">Choose file</label>
                         </div>
-                        <!-- <div class="input-group-append">
-                        <span class="input-group-text">Upload</span>
-                      </div> -->
+                       
                       </div>
                     </div>
 
@@ -72,36 +70,28 @@
 
                     <div class="form-group">
                       <label for="nationality">Nationality</label>
-                      <!-- <input type="text" class="form-control" id="country" placeholder="country" required> -->
+                      
                       <select id="nationality" class="form-control" required></select>
-                      <!-- <select class="form-control" id="country">
-                        
-                      </select> -->
+                      
                     </div>
 
                     <div class="form-group">
                       <label for="country">Country</label>
-                      <!-- <input type="text" class="form-control" id="country" placeholder="country" required> -->
+                      
                       <select id="country" class="form-control" onchange="getState()" required></select>
-                      <!-- <select class="form-control" id="country">
-                        
-                      </select> -->
+                      
                     </div>
                     <div class="form-group">
                       <label for="state">State</label>
-                      <!-- <input type="text" class="form-control" id="state" placeholder="state" required> -->
+                      
                       <select id="state" class="form-control" onchange="getCity()" required></select>
-                      <!-- <select class="form-control" id="state">
-                        
-                      </select> -->
+                      
                     </div>
                     <div class="form-group">
                       <label for="city">City</label>
-                      <!-- <input type="text" class="form-control" id="city" placeholder="city" required> -->
+                      
                       <select id="city" class="form-control" required></select>
-                      <!-- <select class="form-control" id="city">
-                        
-                      </select> -->
+                      
                     </div>
                     <div class="form-group">
                       <label for="bio">Zip Code</label>
@@ -138,10 +128,7 @@
                       <input type="text" class="form-control" id="password" placeholder="password">
                     </div>
 
-                    <!-- <div class="form-group col-md-3">
-                        <label for="signature">Signature</label>
-                        <input type="text" class="form-control" id="signature" placeholder="signature" required>
-                      </div> -->
+                    
                     <div class="form-group col-md-12 artist">
                       <label for="signature">Signature</label>
                       <div class="input-group">
@@ -224,8 +211,7 @@
     });
 
     function toUser(res) {
-      // alert(JSON.stringify(res));
-      // console.log(res);
+
       if (res.code != 200) {
         alert(res.errorMessage);
         return;
@@ -257,7 +243,7 @@
         $("#status").val(data.status)
         $("#isWonderRoom").val(data.isWonderRoom);
         $("#country :selected").text(data.country);
-         $("#nationality :selected").text(data.nationality);
+        $("#nationality :selected").text(data.nationality);
         //$("#country").html("<option value='"+data.country+"'>"+data.country+"</option>")
         $("#city").html("<option value='" + data.city + "'>" + data.city + "</option>")
         $("#state").html("<option value='" + data.state + "'>" + data.state + "</option>")
@@ -330,7 +316,7 @@
       __ajax_http_upload("upload", formData, [], "POST", "upload", function(res) {
         fileUpload = res.data;
         fileUpload.url = API_URL + fileUpload.filename;
-        console.log(fileUpload);
+
         //$("#url").attr('src', fileUpload.url);
       });
     }
@@ -342,7 +328,7 @@
       __ajax_http_upload("upload", formData, [], "POST", "upload", function(res) {
         fileUpload2 = res.data;
         fileUpload2.signature = API_URL + res.data.filename;
-        console.log(fileUpload2);
+
 
       });
     }

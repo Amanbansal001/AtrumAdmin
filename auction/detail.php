@@ -22,7 +22,7 @@
       <!-- Main content -->
       <section class="content">
         <div class="container-fluid">
-        
+
           <div class="row mt-4">
             <!-- left column -->
             <div class="col-md-12">
@@ -61,7 +61,7 @@
                     </div>
 
 
-                    
+
                     <!-- <div class="form-group">
                       <label for="startDate">Start Date</label>
                       <input type="date" class="form-control" id="startDate" placeholder="startDate" required>
@@ -72,7 +72,7 @@
                       <input type="date" class="form-control" id="expiryDate" placeholder="expiryDate" required>
                     </div> -->
 
-                 
+
                     <!-- <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
@@ -107,7 +107,6 @@
     let fileUpload;
 
     $('form#addEdit').submit(function(e) {
-      console.log('form')
       e.preventDefault();
       // or return false;
       validateData(e);
@@ -120,8 +119,7 @@
     }
 
     function toProduct(res) {
-      console.log(res);
-      if(res.code!=200){
+      if (res.code != 200) {
         alert(res.errorMessage);
         return;
       }
@@ -152,13 +150,13 @@
         // expiryDate: $("#expiryDate").val(),
         // startDate: $("#startDate").val(),
         auctionNameId: $("#auctionId").val(),
-        price:$("#price").val()
-        
+        price: $("#price").val()
+
       };
 
       if (pkId) {
         data.id = pkId;
-        data.isUpdate=1;
+        data.isUpdate = 1;
         __ajax_http("auction/" + pkId, data, [], "PUT", "auction", toProduct);
       } else {
         __ajax_http("auction", data, [], "POST", "auction", toProduct);
@@ -171,7 +169,7 @@
         var data = res.data.fetch;
         var html = "";
         data.forEach((e, idx) => {
-          html += "<option value=" + e.id + ">" + e.productName +" by "+_.get(e, "user.name") +"(@"+e.price+") </option>";
+          html += "<option value=" + e.id + ">" + e.productName + " by " + _.get(e, "user.name") + "(@" + e.price + ") </option>";
         })
 
         $("#productId").html(html);
@@ -181,12 +179,12 @@
         var data = res.data.fetch;
         var html = "";
         data.forEach((e, idx) => {
-          html += "<option value=" + e.id + ">" + e.name +" </option>";
+          html += "<option value=" + e.id + ">" + e.name + " </option>";
         })
 
         $("#auctionId").html(html);
       });
-     
+
     }
 
     function __init_call() {

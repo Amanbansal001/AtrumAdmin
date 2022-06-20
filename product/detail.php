@@ -90,19 +90,14 @@
                                                                                                                           } ?>>
                             <label class="custom-file-label" for="productImage">Choose file</label>
                           </div>
-                          <!-- <div class="input-group-append">
-                        <span class="input-group-text">Upload</span>
-                      </div> -->
+                          
                         </div>
                       </div>
                       <div class="form-group col-md-3">
                         <label for="price">Price</label>
                         <input type="text" class="form-control" id="price" placeholder="price" pattern="\d*" maxlength="8" required>
                       </div>
-                      <!-- <div class="form-group col-md-3">
-                        <label for="shippingInfo">Shipping From</label>
-                        <input type="text" class="form-control" id="shippingInfo" placeholder="shippingInfo" required>
-                      </div> -->
+                     
                     </div>
                     <div class="row">
                       <div class="form-group col-md-3">
@@ -113,30 +108,13 @@
                         <label for="medium">Medium</label>
                         <input type="text" class="form-control" id="medium" placeholder="medium" maxlength="100" required>
                       </div>
-                      <!-- <div class="form-group col-md-3">
-                        <label for="signature">Signature</label>
-                        <input type="text" class="form-control" id="signature" placeholder="signature" required>
-                      </div> -->
-                      <!-- <div class="form-group col-md-3">
-                        <label for="signature">Signature</label>
-                        <div class="input-group">
-                          <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="signature">
-                            <label class="custom-file-label" for="signature">Choose file</label>
-                          </div>
-                         
-                        </div>
-                      </div> -->
-                      <!-- <div class="form-group col-md-3">
-                        <label for="certificateAuth">Certificate Auth</label>
-                        <input type="text" class="form-control" id="certificateAuth" placeholder="certificateAuth" required>
-                      </div> -->
+                      
                     </div>
                     <div class="row">
 
                       <div class="form-group col-md-3">
                         <label for="frame">Frame</label>
-                        <!-- <input type="text" class="form-control" id="frame" placeholder="frame" required> -->
+                
                         <select class="form-control" id="frame">
                           <option value="" selected>No Frame</option>
                           <option value="Framed">Framed</option>
@@ -149,10 +127,7 @@
                         <input type="text" class="form-control" id="length" placeholder="length" maxlength="6" required>
                       </div>
 
-                      <!-- <div class="form-group col-md-3">
-                        <label for="frame">Width(cm)</label>
-                        <input type="text" class="form-control" id="breadth" placeholder="breadth" maxlength="6" required>
-                      </div> -->
+                      
 
                       <div class="form-group col-md-3">
                         <label for="frame">Height(cm)</label>
@@ -174,7 +149,7 @@
 
                       <div class="form-group col-md-3">
                         <label for="frame">Orientation</label>
-                        <!-- <input type="text" class="form-control" id="orientation" placeholder="orientation" required> -->
+                        
                         <select class="form-control" id="orientation" placeholder="showPrice">
                           <option value="" selected>No Orientation</option>
                           <option value="Landscape">Landscape</option>
@@ -182,10 +157,6 @@
                         </select>
                       </div>
 
-                      <!-- <div class="form-group col-md-3">
-                        <label for="frame">Material</label>
-                        <input type="text" class="form-control" id="material" placeholder="material" maxlength="100" required>
-                      </div> -->
 
                       <div class="form-group col-md-3">
                         <label for="frame">ShowPrice</label>
@@ -226,15 +197,7 @@
                         <input type="date" class="form-control" id="dateOfProduction" placeholder="">
                       </div>
 
-                      <!-- <div class="form-group col-md-3">
-                        <label for="frame">Gallery</label>
-                        <input type="text" class="form-control" id="gallery" placeholder="gallery" required>
-                      </div> -->
-
-                      <!-- <div class="form-group col-md-3">
-                        <label for="frame">Product City</label>
-                        <input type="text" class="form-control" id="productCity" placeholder="productCity" required>
-                      </div> -->
+                     
                     </div>
 
                     <div class="row">
@@ -268,10 +231,7 @@
                         <img src="" id="url" width="100px" accept="image/png, image/jpeg" />
                       </div>
                     </div>
-                    <!-- <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                  </div> -->
+                    
                   </div>
                   <!-- /.card-body -->
 
@@ -303,7 +263,7 @@
     let fileUpload2;
 
     $('form#addEdit').submit(function(e) {
-      console.log('form')
+
       e.preventDefault();
       // or return false;
       validateData(e);
@@ -322,7 +282,7 @@
     }
 
     function toProduct(res) {
-      console.log(res);
+
       if (res.code != 200) {
         alert(res.errorMessage);
         return;
@@ -467,7 +427,7 @@
       __ajax_http_upload("upload", formData, [], "POST", "upload", function(res) {
         fileUpload = res.data;
         fileUpload.url = API_URL + fileUpload.filename;
-        console.log(fileUpload);
+
         $("#url").attr('src', fileUpload.url);
       });
     }
@@ -479,7 +439,7 @@
       __ajax_http_upload("upload", formData, [], "POST", "upload", function(res) {
         fileUpload2 = res.data;
         fileUpload2.signature = API_URL + res.data.filename;
-        console.log(fileUpload);
+
 
       });
     }

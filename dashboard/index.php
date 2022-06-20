@@ -100,16 +100,16 @@
   <?php require_once(__DIR__ . '/../layout/scripts.php'); ?>
 
   <script>
-    __ajax_http("users?roleType=user", ``, [], "GET", "users", function(res){
+    __ajax_http("users?roleType=user", ``, [], "GET", "users", function(res) {
       $("#users").html(res.data.fetch.length)
     });
-    __ajax_http("users?roleType=artist", ``, [], "GET", "users", function(res){
+    __ajax_http("users?roleType=artist", ``, [], "GET", "users", function(res) {
       $("#artist").html(res.data.fetch.length)
     });
-    __ajax_http("orders", ``, [], "GET", "orders", function(res){
-      var t=0;
-      res.data.fetch.forEach(e=>{
-        t+=parseFloat(e.grandTotal);
+    __ajax_http("orders", ``, [], "GET", "orders", function(res) {
+      var t = 0;
+      res.data.fetch.forEach(e => {
+        t += parseFloat(e.grandTotal);
       })
       $("#sales").html(t)
       $("#orders").html(res.data.fetch.length)

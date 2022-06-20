@@ -18,15 +18,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- AdminLTE App -->
 <script src="/assets/dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="/assets/dist/js/demo.js"></script>
 <!-- Page specific script -->
 <script src="/assets/dist/js/api.js"></script>
 <script src="/assets/plugins/select2/js/select2.full.min.js"></script>
 <!-- Bootstrap4 Duallistbox -->
 
 <script>
-    function ddmmyyyy(date, delimitor = "-"){
+    function ddmmyyyy(date, delimitor = "-") {
         var today = new Date(date);
         var dd = today.getDate();
 
@@ -40,13 +38,9 @@
             mm = '0' + mm;
         }
         //today = mm + '-' + dd + '-' + yyyy;
-        //console.log(today);
+
         today = `${dd}${delimitor}${mm}${delimitor}${yyyy}`;
-        //console.log(today);
-        //today = dd + '-' + mm + '-' + yyyy;
-        //console.log(today);
-        //today = dd + '/' + mm + '/' + yyyy;
-        //console.log(today);
+
 
         return today;
     }
@@ -56,9 +50,9 @@
         var html = "";
         n.forEach(e => {
             let d = ddmmyyyy(e.createdAt);
-            let orderId = e.orderId!=0 ? ` #ORD${String(e.orderId).padStart(6, '0')} `:'';
-            let link = e.orderId!=0 ?"/order/detail.php?id="+e.orderId+"":"#";
-            html += '<a href='+link+' class="dropdown-item">' +
+            let orderId = e.orderId != 0 ? ` #ORD${String(e.orderId).padStart(6, '0')} ` : '';
+            let link = e.orderId != 0 ? "/order/detail.php?id=" + e.orderId + "" : "#";
+            html += '<a href=' + link + ' class="dropdown-item">' +
                 '<i class="fas fa-envelope mr-2"></i>' + e.message + orderId +
                 '<span class="float-right text-muted text-sm">' + d + '</span>' +
                 '</a>';

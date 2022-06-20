@@ -1,9 +1,7 @@
 <style>
-
-table.dataTable>tbody>tr.child ul.dtr-details>li{
-    width: 700px !important;
-}
-
+    table.dataTable>tbody>tr.child ul.dtr-details>li {
+        width: 700px !important;
+    }
 </style>
 
 <div class="card">
@@ -28,7 +26,7 @@ table.dataTable>tbody>tr.child ul.dtr-details>li{
         <table id="dataTableEl" class="table table-bordered table-striped">
 
             <div class="row mb-4 mt-3">
-                <div class="col-md-4"> <label>Order Status</label><select class="form-control" id="orderStatus" >
+                <div class="col-md-4"> <label>Order Status</label><select class="form-control" id="orderStatus">
                         <option value="PENDING FOR SHIPPING CHARGES">PENDING FOR SHIPPING CHARGES</option>
                         <option value="PENDING FOR PAYMENT" selected="">PENDING FOR PAYMENT</option>
                         <option value="CONFIRMED">CONFIRMED</option>
@@ -41,7 +39,7 @@ table.dataTable>tbody>tr.child ul.dtr-details>li{
                 </div>
 
                 <div class="col-md-2" style="margin-top: 32px;">
-                    <button  onclick='orderStatus()' class='btn btn-outline-primary btn-block'>Save</button>
+                    <button onclick='orderStatus()' class='btn btn-outline-primary btn-block'>Save</button>
                 </div>
             </div>
             <thead>
@@ -307,13 +305,9 @@ table.dataTable>tbody>tr.child ul.dtr-details>li{
             mm = '0' + mm;
         }
         //today = mm + '-' + dd + '-' + yyyy;
-        //console.log(today);
+
         today = `${dd}${delimitor}${mm}${delimitor}${yyyy}`;
-        //console.log(today);
-        //today = dd + '-' + mm + '-' + yyyy;
-        //console.log(today);
-        //today = dd + '/' + mm + '/' + yyyy;
-        //console.log(today);
+
 
         return today;
     }

@@ -51,12 +51,12 @@
                       <label for="name">Name</label>
                       <input type="text" class="form-control" id="name" placeholder="name" maxlength="100" required>
                     </div>
-                   
+
                     <div class="form-group">
                       <label for="email">Email</label>
                       <input type="email" class="form-control" id="email" placeholder="email" maxlength="200" required>
                     </div>
-                    
+
                     <div class="form-group">
                       <label for="name">Password</label>
                       <input type="text" class="form-control" id="password" maxlength="100" placeholder="password">
@@ -71,7 +71,7 @@
                 </form>
               </div>
 
-              
+
               <!-- /.card -->
 
               <!--/.col (right) -->
@@ -96,8 +96,8 @@
     }
 
     function toUser(res) {
-      console.log(res);
-      if(res.code!=200){
+
+      if (res.code != 200) {
         alert(res.errorMessage);
         return;
       }
@@ -128,22 +128,18 @@
         res.data.fetch.forEach((e) => {
           html += '<div class="col-md-3 col-sm-6 col-12">' +
             '<div class="info-box bg-gradient-info">' +
-            ' <span class="info-box-icon"><i class="far fa-envelope"></i></span>'
-            +
+            ' <span class="info-box-icon"><i class="far fa-envelope"></i></span>' +
             '<div class="info-box-content">' +
             ' <span class="info-box-text">' + e.name + '</span>' +
-            '<span class="info-box-number">' + e.shippingType + '</span>'
-            +
+            '<span class="info-box-number">' + e.shippingType + '</span>' +
             '<span class="progress-description">' +
             e.addressLine1 + " " + e.addressLine2 + " " + e.city + " " + e.state + " " + e.country + " " + e.zipCode + " " +
             +' </span>' +
-            ' </div>'
-            +
-            ' </div>'
-            +
+            ' </div>' +
+            ' </div>' +
             '</div>';
 
-            $("#addressBook").html(html);
+          $("#addressBook").html(html);
         })
       })
     }

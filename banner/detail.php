@@ -46,7 +46,7 @@
                       <label for="name">Banner File</label>
                       <input type="file" class="form-control" id="upload" name="upload" placeholder="Banner Url" required>
                     </div>
-                   
+
                     <div class="form-group">
                       <label for="name">Text</label>
                       <input type="text" class="form-control" id="text" name="text" maxlength="100" placeholder="Banner Text" required>
@@ -67,7 +67,7 @@
 
 
                     <div class="form-group">
-                      <img src="" id="url" width="100px"/>
+                      <img src="" id="url" width="100px" />
                     </div>
 
                   </div>
@@ -104,8 +104,8 @@
     }
 
     function toUser(res) {
-      console.log(res);
-      if(res.code!=200){
+
+      if (res.code != 200) {
         alert(res.errorMessage);
         return;
       }
@@ -122,7 +122,9 @@
         $("#text").val(data.text)
         $("#heading").val(data.heading)
         $("#type").val(data.type)
-        fileUpload = {filename : data.url};
+        fileUpload = {
+          filename: data.url
+        };
       });
     }
 
@@ -132,9 +134,9 @@
 
       var data = {
         url: fileUpload.filename,
-        text:$("#text").val(),
-        heading:$("#heading").val(),
-        type:$("#type").val()
+        text: $("#text").val(),
+        heading: $("#heading").val(),
+        type: $("#type").val()
       };
 
       if (pkId) {
@@ -147,14 +149,14 @@
     }
 
     function upload_func(files) {
-      
+
       var formData = new FormData();
       formData.append("file", files);
       __ajax_http_upload("upload", formData, [], "POST", "upload", function(res) {
         fileUpload = res.data;
-        fileUpload.url = API_URL+fileUpload.filename;
-        console.log(fileUpload);
-        $("#url").attr('src',fileUpload.url);
+        fileUpload.url = API_URL + fileUpload.filename;
+
+        $("#url").attr('src', fileUpload.url);
       });
     }
 

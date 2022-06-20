@@ -28,7 +28,7 @@
               <div class="form-group">
                 <label for="userId">Auction Name</label>
                 <select class="form-control" id="auctionId" onchange="getbyAuction()">
-                 
+
                 </select>
               </div>
 
@@ -75,32 +75,32 @@
         bidStatus: 'Win',
         id: id
       }, [], "PUT", "productBids", (res) => {
-        if(res.code!=200){
-        alert(res.errorMessage);
-        return;
-      }else{
-        window.location.reload();
-      }
-        
-      },err=>{
+        if (res.code != 200) {
+          alert(res.errorMessage);
+          return;
+        } else {
+          window.location.reload();
+        }
+
+      }, err => {
         alert(err);
       });
     }
 
-    function getbyAuction(){
+    function getbyAuction() {
       $('#dataTableEl').DataTable().clear().destroy();
-      __ajax_http("<?php echo $apiCall; ?>?auctionId="+$("#auctionId").val(),null, [], "GET", "<?php echo $apiCall; ?>", makeDt);
+      __ajax_http("<?php echo $apiCall; ?>?auctionId=" + $("#auctionId").val(), null, [], "GET", "<?php echo $apiCall; ?>", makeDt);
     }
 
     __ajax_http("auctionNames", null, [], "GET", "auctionNames", function(res) {
-        var data = res.data.fetch;
-        var html = "<option value=''>All</option>";
-        data.forEach((e, idx) => {
-          html += "<option value=" + e.id + ">" + e.name +" </option>";
-        })
+      var data = res.data.fetch;
+      var html = "<option value=''>All</option>";
+      data.forEach((e, idx) => {
+        html += "<option value=" + e.id + ">" + e.name + " </option>";
+      })
 
-        $("#auctionId").html(html);
-      });
+      $("#auctionId").html(html);
+    });
   </script>
 </body>
 

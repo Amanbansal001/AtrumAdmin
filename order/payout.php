@@ -91,16 +91,16 @@
 
 
             </div>
-           
+
             <!-- /.col -->
           </div>
           <!-- /.row -->
           <div class="row">
-                <div class="col-9"></div>
-                <div class="col-3">
-                  <div class="text-right">Total : USD&nbsp;<label id="totalPayout">0.00</label></div>
-                </div>
+            <div class="col-9"></div>
+            <div class="col-3">
+              <div class="text-right">Total : USD&nbsp;<label id="totalPayout">0.00</label></div>
             </div>
+          </div>
         </div>
         <!-- /.container-fluid -->
       </section>
@@ -130,7 +130,7 @@
     function handlePaid() {
       let data = [];
 
-      if(document.querySelectorAll(".checkbox:checked").length==0){
+      if (document.querySelectorAll(".checkbox:checked").length == 0) {
         alert(`Select order to continue`);
         return;
       }
@@ -154,11 +154,11 @@
     function handleUnPaid() {
       let data = [];
 
-      if(document.querySelectorAll(".checkbox:checked").length==0){
+      if (document.querySelectorAll(".checkbox:checked").length == 0) {
         alert(`Select order to continue`);
         return;
       }
-      
+
       document.querySelectorAll(".checkbox").forEach((e, idx) => {
         if (e.checked) {
           data.push({
@@ -190,7 +190,7 @@
       totalPayout = 0;
       document.querySelectorAll(".checkbox").forEach((e, idx) => {
         if (e.checked) {
-          
+
           var comission = _.get(tableData[idx], "comission");
           var price = _.get(tableData[idx], "price");
           var qty = _.get(tableData[idx], "qty");

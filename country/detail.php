@@ -99,8 +99,8 @@
     }
 
     function toUser(res) {
-      console.log(res);
-      if(res.code!=200){
+
+      if (res.code != 200) {
         alert(res.errorMessage);
         return;
       }
@@ -129,17 +129,17 @@
       var pkId = getParameterByName("id");
 
       var data = {
-        name:$("#name").val(),
-        vat:$("#vat").val(),
-        iso2:$("#iso2").val(),
-        currency:$("#currency").val(),
-        currency_symbol:$("#currency_symbol").val(),
+        name: $("#name").val(),
+        vat: $("#vat").val(),
+        iso2: $("#iso2").val(),
+        currency: $("#currency").val(),
+        currency_symbol: $("#currency_symbol").val(),
 
       };
 
       if (pkId) {
         data.id = pkId;
-        data.isUpdate=1;
+        data.isUpdate = 1;
         __ajax_http("country/" + pkId, data, [], "PUT", "country", toUser);
       } else {
         __ajax_http("country", data, [], "POST", "country", toUser);

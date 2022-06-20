@@ -34,7 +34,7 @@
                 "order.ship.country", "order.ship.state", "order.ship.city", "order.ship.zipCode", "order.ship.addressLine1", "order.ship.addressLine2",
                 "arts.user.country", "arts.user.state", "arts.user.city", "arts.user.zipCode", "arts.user.address",
                 "vat",
-                "shippingAmount", "orderStatus","order.trackingId", "estimatedPickupDate", "estimatedDeliveryDate", "pickUpDate", "deliveryDate",
+                "shippingAmount", "orderStatus", "order.trackingId", "estimatedPickupDate", "estimatedDeliveryDate", "pickUpDate", "deliveryDate",
                 "arts.publishYear", "arts.edition", "arts.productDescription", "arts.frame", "arts.orientation", "arts.material", "arts.collection", "arts.medium",
                 "arts.length", "arts.breadth", "arts.height",
                 "createdAt"

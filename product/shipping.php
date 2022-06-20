@@ -126,14 +126,14 @@
     let fileUpload;
 
     $('form#addEdit').submit(function(e) {
-      console.log('form')
+      
       e.preventDefault();
       // or return false;
       validateData(e);
     });
 
     $('form#shipping').submit(function(e) {
-      console.log('form')
+     
       e.preventDefault();
       // or return false;
       validateDataShipping(e);
@@ -152,7 +152,7 @@
     }
 
     function toProduct(res) {
-      console.log(res);
+      
       goto('shipping.php?id='+getParameterByName("id"));
     }
 
@@ -163,23 +163,7 @@
       }
       __ajax_http("products/" + pkId, null, [], "GET", "product", function(res) {
         var data = res.data.fetch;
-        // $("#publishYear").val(data.publishYear)
-        // $("#productName").val(data.productName)
-        // $("#productDescription").val(data.productDescription)
-        // $("#price").val(data.price)
-        // $("#shippingInfo").val(data.shippingInfo)
-        // $("#medium").val(data.medium)
-        // $("#signature").val(data.signature)
-        // $("#certificateAuth").val(data.certificateAuth)
-        // $("#frame").val(data.frame)
-
-        // $("#userId").val(data.userId)
-        // $("#categoryId").val(data.categoryId)
-        // $("#inStock").val(data.inStock);
-
-        // $("#length").val(data.length);
-        // $("#breadth").val(data.breadth);
-        // $("#height").val(data.height);
+      
 
         $("#fromCountry").val(data.user.country);
         $("#fromCity").val(data.user.city);
@@ -287,7 +271,7 @@
       __ajax_http_upload("upload", formData, [], "POST", "upload", function(res) {
         fileUpload = res.data;
         fileUpload.url = API_URL + fileUpload.filename;
-        console.log(fileUpload);
+        
         $("#url").attr('src', fileUpload.url);
       });
     }

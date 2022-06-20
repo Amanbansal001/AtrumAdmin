@@ -44,19 +44,19 @@
                     </div>
                   </div>
 
-    
+
                   <div class="form-group">
                     <label for="name">Current Auction Head</label>
                     <input type="text" class="form-control" id="CURRENT_AUCTION_HEAD" name="CURRENT_AUCTION_HEAD" placeholder="CURRENT_AUCTION_HEAD" required>
                   </div>
 
-                  
+
                   <div class="form-group">
                     <label for="name">Past Auction Head</label>
                     <input type="text" class="form-control" id="PAST_AUCTION_HEAD" name="PAST_AUCTION_HEAD" placeholder="PAST_AUCTION_HEAD" required>
                   </div>
 
-                  
+
                   <div class="form-group">
                     <label for="name">Upcoming Auction Head</label>
                     <input type="text" class="form-control" id="UPCOMING_AUCTION_HEAD" name="UPCOMING_AUCTION_HEAD" placeholder="UPCOMING_AUCTION_HEAD" required>
@@ -91,12 +91,13 @@
   <script>
     let fileUpload;
     let fetchData;
+
     function validateData(e) {
       makeData();
       return false;
     }
 
-    function makeData(){
+    function makeData() {
       configUpdate("CURRENT_AUCTION_HEAD");
       configUpdate("AUCTION_BANNER");
       configUpdate("PAST_AUCTION_HEAD");
@@ -108,42 +109,42 @@
 
     }
 
-    function configUpdate(col){
-      let id = fetchData.find(e=>e.col==col).id;
+    function configUpdate(col) {
+      let id = fetchData.find(e => e.col == col).id;
       __ajax_http("config/" + id, {
-        val:$("#"+col).val(),
-        isUpdate:1,
-        id:id
-      }, [], "PUT", "config", function(){
+        val: $("#" + col).val(),
+        isUpdate: 1,
+        id: id
+      }, [], "PUT", "config", function() {
 
       });
     }
 
     function getData() {
-      
+
       __ajax_http("config", null, [], "GET", "config", function(res) {
         var data = res.data.fetch;
-        fetchData=data;
-        fileUpload = data.find(e=>e.col=="AUCTION_BANNER").val;
-        $("#CURRENT_AUCTION_HEAD").val(data.find(e=>e.col=="CURRENT_AUCTION_HEAD").val)
-        $("#AUCTION_BANNER_URL").attr('src',data.find(e=>e.col=="AUCTION_BANNER").val)
-        $("#AUCTION_BANNER").val(data.find(e=>e.col=="AUCTION_BANNER").val)
-        $("#PAST_AUCTION_HEAD").val(data.find(e=>e.col=="PAST_AUCTION_HEAD").val)
-        $("#UPCOMING_AUCTION_HEAD").val(data.find(e=>e.col=="UPCOMING_AUCTION_HEAD").val)
+        fetchData = data;
+        fileUpload = data.find(e => e.col == "AUCTION_BANNER").val;
+        $("#CURRENT_AUCTION_HEAD").val(data.find(e => e.col == "CURRENT_AUCTION_HEAD").val)
+        $("#AUCTION_BANNER_URL").attr('src', data.find(e => e.col == "AUCTION_BANNER").val)
+        $("#AUCTION_BANNER").val(data.find(e => e.col == "AUCTION_BANNER").val)
+        $("#PAST_AUCTION_HEAD").val(data.find(e => e.col == "PAST_AUCTION_HEAD").val)
+        $("#UPCOMING_AUCTION_HEAD").val(data.find(e => e.col == "UPCOMING_AUCTION_HEAD").val)
 
 
       });
     }
 
     function upload_func(files) {
-      
+
       var formData = new FormData();
       formData.append("file", files);
       __ajax_http_upload("upload", formData, [], "POST", "upload", function(res) {
         fileUpload = res.data;
-        fileUpload.url = API_URL+fileUpload.filename;
-        console.log(fileUpload);
-        $("#AUCTION_BANNER_URL").attr('src',fileUpload.url);
+        fileUpload.url = API_URL + fileUpload.filename;
+
+        $("#AUCTION_BANNER_URL").attr('src', fileUpload.url);
         $("#AUCTION_BANNER").val(fileUpload.url);
       });
     }
@@ -160,8 +161,7 @@
     function __init_call() {
       getData();
     }
-
-    </script>
+  </script>
 </body>
 
 </html>

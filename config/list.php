@@ -87,12 +87,13 @@
   <script>
     let fileUpload;
     let fetchData;
+
     function validateData(e) {
       makeData();
       return false;
     }
 
-    function makeData(){
+    function makeData() {
       configUpdate("SITE_COLOR");
       configUpdate("SITE_LOGO");
       configUpdate("COMISSION");
@@ -104,42 +105,42 @@
 
     }
 
-    function configUpdate(col){
-      let id = fetchData.find(e=>e.col==col).id;
+    function configUpdate(col) {
+      let id = fetchData.find(e => e.col == col).id;
       __ajax_http("config/" + id, {
-        val:$("#"+col).val(),
-        isUpdate:1,
-        id:id
-      }, [], "PUT", "config", function(){
+        val: $("#" + col).val(),
+        isUpdate: 1,
+        id: id
+      }, [], "PUT", "config", function() {
 
       });
     }
 
     function getData() {
-      
+
       __ajax_http("config", null, [], "GET", "config", function(res) {
         var data = res.data.fetch;
-        fetchData=data;
-        fileUpload = data.find(e=>e.col=="SITE_LOGO").val;
-        $("#SITE_COLOR").val(data.find(e=>e.col=="SITE_COLOR").val)
-        $("#SITE_LOGO_URL").attr('src',data.find(e=>e.col=="SITE_LOGO").val)
-        $("#SITE_LOGO").val(data.find(e=>e.col=="SITE_LOGO").val)
-        $("#COMISSION").val(data.find(e=>e.col=="COMISSION").val)
-        $("#NEW_ARRIVAL").val(data.find(e=>e.col=="NEW_ARRIVAL").val)
+        fetchData = data;
+        fileUpload = data.find(e => e.col == "SITE_LOGO").val;
+        $("#SITE_COLOR").val(data.find(e => e.col == "SITE_COLOR").val)
+        $("#SITE_LOGO_URL").attr('src', data.find(e => e.col == "SITE_LOGO").val)
+        $("#SITE_LOGO").val(data.find(e => e.col == "SITE_LOGO").val)
+        $("#COMISSION").val(data.find(e => e.col == "COMISSION").val)
+        $("#NEW_ARRIVAL").val(data.find(e => e.col == "NEW_ARRIVAL").val)
 
 
       });
     }
 
     function upload_func(files) {
-      
+
       var formData = new FormData();
       formData.append("file", files);
       __ajax_http_upload("upload", formData, [], "POST", "upload", function(res) {
         fileUpload = res.data;
-        fileUpload.url = API_URL+fileUpload.filename;
-        console.log(fileUpload);
-        $("#SITE_LOGO_URL").attr('src',fileUpload.url);
+        fileUpload.url = API_URL + fileUpload.filename;
+
+        $("#SITE_LOGO_URL").attr('src', fileUpload.url);
         $("#SITE_LOGO").val(fileUpload.url);
       });
     }
@@ -156,8 +157,7 @@
     function __init_call() {
       getData();
     }
-
-    </script>
+  </script>
 </body>
 
 </html>

@@ -29,8 +29,8 @@
               <?php
               $heading = "Auction Listing";
               $dtTagLine = "Atrumart Auction Listing";
-              $columns = ["name","startDate","expiryDate","product.productName", "product.productDescription", "product.productImage", "price", "softaction"];
-              $columnsFace = ["Auction Name","Start Date","End Date","Product Name", "Product Description", "Product Image", "Min Bid Price", "Action"];
+              $columns = ["name", "startDate", "expiryDate", "product.productName", "product.productDescription", "product.productImage", "price", "softaction"];
+              $columnsFace = ["Auction Name", "Start Date", "End Date", "Product Name", "Product Description", "Product Image", "Min Bid Price", "Action"];
               $columnsImg = "product.productImage";
               $apiCall = "auction?status=0";
               $actionDel = 1;

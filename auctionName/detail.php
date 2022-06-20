@@ -88,8 +88,7 @@
     }
 
     function callBack_func(res) {
-      console.log(res);
-      if(res.code!=200){
+      if (res.code != 200) {
         alert(res.errorMessage);
         return;
       }
@@ -123,7 +122,7 @@
 
       if (pkId) {
         data.id = pkId;
-        data.isUpdate=1;
+        data.isUpdate = 1;
         __ajax_http("auctionNames/" + pkId, data, [], "PUT", "auctionNames", callBack_func);
       } else {
         __ajax_http("auctionNames", data, [], "POST", "auctionNames", callBack_func);

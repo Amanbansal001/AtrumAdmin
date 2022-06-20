@@ -33,7 +33,7 @@
                             <!-- <i class="right fas fa-angle-left"></i> -->
                         </p>
                     </a>
-                   
+
                 </li>
 
                 <li class="nav-item">
@@ -63,10 +63,10 @@
                                 <p>Banner Management</p>
                             </a>
                         </li>
-                        
+
                     </ul>
                 </li>
-                
+
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-envelope"></i>
@@ -97,7 +97,7 @@
 
                     </ul>
                 </li>
-                
+
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-tasks"></i>
@@ -125,7 +125,7 @@
                                 <p>NFT</p>
                             </a>
                         </li>
-                        
+
                     </ul>
                 </li>
 
@@ -138,8 +138,8 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                       
-                        
+
+
                         <li class="nav-item">
                             <a href="/auctionName/list.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
@@ -190,7 +190,7 @@
                                 <p>Vendor Management</p>
                             </a>
                         </li>
-                       
+
                         <li class="nav-item">
                             <a href="/featuredArtist/list.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
@@ -215,7 +215,7 @@
                                 <p>List</p>
                             </a>
                         </li>
-                       
+
                     </ul>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
@@ -224,7 +224,7 @@
                                 <p>Payout</p>
                             </a>
                         </li>
-                       
+
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -242,7 +242,7 @@
                                 <p>List</p>
                             </a>
                         </li>
-                        
+
 
                     </ul>
                 </li>

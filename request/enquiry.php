@@ -261,10 +261,12 @@
       padding: 0px;
     }
   }
-  .hover{
+
+  .hover {
     cursor: pointer;
   }
-  .small{
+
+  .small {
     font-size: 57%;
   }
 </style>
@@ -300,18 +302,9 @@
             <div class="col-md-4 border-right">
               <div class="settings-tray">
                 <img class="profile-image" src="https://www.kindpng.com/picc/m/24-248253_user-profile-default-image-png-clipart-png-download.png" alt="Profile img">
-                <!-- <span class="settings-tray--right">
-                  <i class="material-icons">cached</i>
-                  <i class="material-icons">message</i>
-                  <i class="material-icons">menu</i>
-                </span> -->
+                
               </div>
-              <!-- <div class="search-box">
-                <div class="input-wrapper">
-                  <i class="material-icons">search</i>
-                  <input placeholder="Search here" type="text">
-                </div>
-              </div> -->
+             
               <div id="leftside">
 
               </div>
@@ -320,15 +313,13 @@
 
               <div class="settings-tray">
                 <div class="friend-drawer no-gutters friend-drawer--grey">
-                  <!-- <img class="profile-image" src="https://www.clarity-enhanced.net/wp-content/uploads/2020/06/robocop.jpg" alt=""> -->
+                  
                   <div class="text">
                     <h6 id="user"></h6>
                     <p class="text-muted" id="productName"></p>
                   </div>
                   <span class="settings-tray--right">
-                    <!-- <i class="material-icons">cached</i>
-                    <i class="material-icons">message</i>
-                    <i class="material-icons">menu</i> -->
+                   
                   </span>
                 </div>
               </div>
@@ -382,7 +373,7 @@
         var html = "";
         data.forEach(e => {
           var date = new Date(e.createdAt);
-          var name = (e.user)?e.user.name:'';
+          var name = (e.user) ? e.user.name : '';
           date = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
           html += '<div class="friend-drawer friend-drawer--onhover" onclick="getMesages(' + e.messageId + ')">' +
             '<img class="profile-image" src="' + e.product.productImage + '" alt="">' +

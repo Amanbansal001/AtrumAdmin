@@ -35,8 +35,8 @@
               <?php
               $heading = "Auction Name Listing";
               $dtTagLine = "Atrumart Auction Name Listing";
-              $columns = ["id","startDate", "expiryDate", "name", "createdAt", "softaction"];
-              $columnsFace = ["#","Start Date", "Expiry Date", "Auction Name", "Created At", "Action"];
+              $columns = ["id", "startDate", "expiryDate", "name", "createdAt", "softaction"];
+              $columnsFace = ["#", "Start Date", "Expiry Date", "Auction Name", "Created At", "Action"];
               $apiCall = "auctionNames?status=1,0";
               $actionDel = true;
               require_once(__DIR__ . '/../layout/global/table.php');

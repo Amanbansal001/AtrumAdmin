@@ -29,15 +29,7 @@
                                 <div class="col-11">
 
                                 </div>
-                                <div class="col-1">
-                                    <label>NFT Wallet</label>
-                                    <div>
-                                        <label>On</label>
-                                        <input type="radio" id="nft_wallet_on" name="nft_wallet" value="1" onchange="updateConfig('NFT_WALLET',1)" />
-                                        <label>Off</label>
-                                        <input type="radio" id="nft_wallet_off" name="nft_wallet" value="0" onchange="updateConfig('NFT_WALLET',0)" />
-                                    </div>
-                                </div>
+                                
                             </div>
 
                             <?php

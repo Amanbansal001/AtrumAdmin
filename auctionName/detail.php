@@ -48,12 +48,12 @@
 
                                         <div class="form-group">
                                             <label for="startDate">Start Date</label>
-                                            <input type="date" class="form-control" id="startDate" placeholder="startDate" required>
+                                            <input type="date" class="form-control" min='<?php echo date('Y-m-d'); ?>' id="startDate" placeholder="startDate" required>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="expiryDate">End Date</label>
-                                            <input type="date" class="form-control" id="expiryDate" placeholder="expiryDate" required>
+                                            <input type="date" class="form-control" min='<?php echo date('Y-m-d'); ?>' id="expiryDate" placeholder="expiryDate" required>
                                         </div>
 
                                     </div>

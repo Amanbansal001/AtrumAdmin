@@ -396,6 +396,11 @@
         }
 
         function sendMessage() {
+
+            if(!$("#message").val()){
+                return;
+            }
+
             const m = enquiry.find(e => e.messageId == _messageId);
             let profile = JSON.parse(localStorage.getItem("profile"));
             __ajax_http("enquiry", {

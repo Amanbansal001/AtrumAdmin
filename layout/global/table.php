@@ -50,6 +50,10 @@
             "order": [
                 [0, "desc"]
             ],
+            'columnDefs': [{
+                "targets": -1,
+                "orderable": false
+            }],
             // "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
             buttons: [{
                     extend: 'copy',
@@ -67,9 +71,7 @@
                     extend: 'print',
                     title: '<?php echo $heading ?>'
                 },
-                {
-                    extend: 'colvis',
-                }
+                
             ]
         }).buttons().container().appendTo('#dataTableEl_wrapper .col-md-6:eq(0)');
 
@@ -210,7 +212,7 @@
                 } else if (col == "urlImg") {
                     var url = _.get(e, "url");
 
-                    url = "https://atrumart.com/api" + url;
+                    url = API_URL + url;
                     html += "<td><img width='50px' src='" + url + "' onerror=\"this.src='https://www.touchtaiwan.com/images/default.jpg';this.onerror='';\"/></td>"
                 } else {
                     var url = _.get(e, col);
@@ -255,7 +257,15 @@
     function _add_art_call(id) {
         __ajax_http("trendingArtworks", {
             productId: id
-        }, [], "POST", "<?php echo ($apiCall2) ? $apiCall2 : $apiCall; ?>", __init_call);
+        }, [], "POST", "<?php echo ($apiCall2) ? $apiCall2 : $apiCall; ?>", (res)=>{
+           if (res) {
+                if (res.code != 200) {
+                    alert(res.errorMessage);
+                    return;
+                }
+            }
+            alert(`Artwork added to featured`);
+        });
     }
 
     function _add_artist_call(id) {

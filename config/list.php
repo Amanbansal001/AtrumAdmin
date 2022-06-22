@@ -32,7 +32,7 @@
                                     <div class="row">
                                         <div class="col-3 form-group">
                                             <label for="name">Site Logo</label>
-                                            <input type="file" class="form-control" id="upload" name="upload" placeholder="SITE_LOGO">
+                                            <input type="file" class="form-control" id="upload" name="upload" placeholder="SITE_LOGO" accept="image/png, image/jpeg">
                                             <input type="hidden" class="form-control" id="SITE_LOGO" name="SITE_LOGO" placeholder="SITE_LOGO">
                                         </div>
                                         <div class="col-7 form-group"></div>
@@ -51,12 +51,12 @@
 
                                     <div class="form-group">
                                         <label for="name">Commission</label>
-                                        <input type="text" class="form-control" id="COMISSION" name="COMISSION" placeholder="COMISSION" required>
+                                        <input type="text" onkeypress='validateNumber(event)' maxlength="10" class="form-control" id="COMISSION" name="COMISSION" placeholder="COMISSION" required>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="name">New Arrival</label>
-                                        <input type="text" class="form-control" id="NEW_ARRIVAL" name="NEW_ARRIVAL" placeholder="NEW_ARRIVAL" required>
+                                        <input type="text" onkeypress='validateNumber(event)' maxlength="10" class="form-control" id="NEW_ARRIVAL" name="NEW_ARRIVAL" placeholder="NEW_ARRIVAL" required>
                                     </div>
 
                                 </div>

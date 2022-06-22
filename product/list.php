@@ -29,8 +29,8 @@
                             <?php
                             $heading = "Product Listing";
                             $dtTagLine = "Atrumart Products Listing";
-                            $columns = ["id", "coa", "featured_art", "productName", "user.name", "inStock", "length", "breadth", "height", "categoryId", "publishYear", "productDescription", "productImage", "price", "shippingInfo", "collection", "medium", "signature", "certificateAuth", "frame", "action"];
-                            $columnsFace = ["id", "COA", "Featured", "Product Name", "Artist Name", "In Stock", "Length", "Breadth", "Height", "Category Id", "Publish Year", "Product Description", "Product Image", "Price", "ShippingInfo", "Collection", "Medium", "Signature", "CertificateAuth", "Frame", "Action"];
+                            $columns = ["id", "coa", "featured_art", "productName", "user.name", "inStock", "length","height", "categoryId", "publishYear", "productDescription", "productImage", "price", "collection", "medium", "frame", "action"];
+                            $columnsFace = ["id", "COA", "Featured", "Product Name", "Artist Name", "In Stock", "Length","Height", "Category Id", "Publish Year", "Product Description", "Product Image", "Price","Collection", "Medium", "Frame", "Action"];
                             $columnsImg = "productImage";
                             $apiCall = "products";
                             $actionDel = true;

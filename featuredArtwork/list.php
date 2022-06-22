@@ -29,8 +29,8 @@
                             <?php
                             $heading = "Featured Artwork";
                             $dtTagLine = "Atrumart Featured Artwork";
-                            $columns = ["id", "arts.categoryId", "arts.publishYear", "arts.productName", "arts.productDescription", "arts.productImage", "arts.price", "arts.shippingInfo", "arts.collection", "arts.medium", "arts.signature", "arts.certificateAuth", "arts.frame", "action"];
-                            $columnsFace = ["id", "Category Id", "Publish Year", "Product Name", "Product Description", "Product Image", "Price", "ShippingInfo", "Collection", "Medium", "Signature", "CertificateAuth", "Frame", "Action"];
+                            $columns = ["arts.publishYear", "arts.productName", "arts.productDescription", "arts.productImage", "arts.price", "arts.collection", "arts.medium", "arts.frame", "action"];
+                            $columnsFace = ["Publish Year", "Product Name", "Product Description", "Product Image", "Price", "Collection", "Medium","Frame", "Action"];
                             $columnsImg = "arts.productImage";
                             $apiCall = "trendingArtworks";
                             $isTblAdd = false;

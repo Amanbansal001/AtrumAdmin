@@ -57,7 +57,7 @@
 
                                         <div class="form-group">
                                             <label for="price">Starting Bid Price</label>
-                                            <input type="text" class="form-control" id="price" placeholder="Price" maxlength="8" required>
+                                            <input type="text" class="form-control" id="price" placeholder="Price" onkeypress='validateNumber(event)' maxlength="8" required>
                                         </div>
 
                                     </div>

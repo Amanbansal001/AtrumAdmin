@@ -124,21 +124,21 @@
 
                                             <div class="form-group col-md-3">
                                                 <label for="length">Length(cm)</label>
-                                                <input type="text" class="form-control" id="length" placeholder="length" maxlength="6" required>
+                                                <input type="text" class="form-control" id="length" placeholder="length" onkeypress='validateNumber(event)' maxlength="6" required>
                                             </div>
 
 
 
                                             <div class="form-group col-md-3">
                                                 <label for="frame">Height(cm)</label>
-                                                <input type="text" class="form-control" id="height" placeholder="height" maxlength="6" required>
+                                                <input type="text" class="form-control" id="height" placeholder="height" onkeypress='validateNumber(event)' maxlength="6" required>
                                             </div>
                                         </div>
                                         <div class="row">
 
                                             <div class="form-group col-md-3">
                                                 <label for="weight">Weight</label>
-                                                <input type="text" class="form-control" id="weight" placeholder="weight" required>
+                                                <input type="text" class="form-control" id="weight" placeholder="weight" onkeypress='validateNumber(event)' required>
                                             </div>
 
                                             <div class="form-group col-md-3">
@@ -194,7 +194,7 @@
 
                                             <div class="form-group col-md-3">
                                                 <label for="frame">Date Of Production</label>
-                                                <input type="date" class="form-control" id="dateOfProduction" placeholder="">
+                                                <input type="date" class="form-control" id="dateOfProduction" placeholder="" required>
                                             </div>
 
 
@@ -424,6 +424,7 @@
                 fileUpload.url = API_URL + fileUpload.filename;
 
                 $("#url").attr('src', fileUpload.url);
+                $('.custom-file-label').html(files.name);
             });
         }
 
@@ -434,7 +435,7 @@
             __ajax_http_upload("upload", formData, [], "POST", "upload", function(res) {
                 fileUpload2 = res.data;
                 fileUpload2.signature = API_URL + res.data.filename;
-
+                $('.custom-file-label').html(files.name);
 
             });
         }

@@ -103,10 +103,6 @@
       configUpdate("PAST_AUCTION_HEAD");
       configUpdate("UPCOMING_AUCTION_HEAD");
 
-      // setTimeout(()=>{
-      //   alert('udpdated');
-      // },500)
-
     }
 
     function configUpdate(col) {

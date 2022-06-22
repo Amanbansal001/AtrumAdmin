@@ -99,10 +99,6 @@
       configUpdate("COMISSION");
       configUpdate("NEW_ARRIVAL");
 
-      // setTimeout(()=>{
-      //   alert('udpdated');
-      // },500)
-
     }
 
     function configUpdate(col) {

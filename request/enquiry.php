@@ -302,9 +302,9 @@
             <div class="col-md-4 border-right">
               <div class="settings-tray">
                 <img class="profile-image" src="https://www.kindpng.com/picc/m/24-248253_user-profile-default-image-png-clipart-png-download.png" alt="Profile img">
-                
+
               </div>
-             
+
               <div id="leftside">
 
               </div>
@@ -313,13 +313,13 @@
 
               <div class="settings-tray">
                 <div class="friend-drawer no-gutters friend-drawer--grey">
-                  
+
                   <div class="text">
                     <h6 id="user"></h6>
                     <p class="text-muted" id="productName"></p>
                   </div>
                   <span class="settings-tray--right">
-                   
+
                   </span>
                 </div>
               </div>
@@ -329,9 +329,9 @@
               <div class="row sendMessage hide">
                 <div class="col-12">
                   <div class="chat-box-tray">
-                    <!-- <i class="material-icons">sentiment_very_satisfied</i> -->
+
                     <input id="message" type="text" placeholder="Type your message here...">
-                    <!-- <i class="material-icons">mic</i>-->
+
                     <i class="material-icons hover" onclick="sendMessage()">send</i>
                   </div>
                 </div>

@@ -42,11 +42,9 @@
 
                     <div class="form-group">
                       <label for="country">Country</label>
-                      <!-- <input type="text" class="form-control" id="country" placeholder="country" required> -->
+
                       <select id="country" class="form-control"></select>
-                      <!-- <select class="form-control" id="country">
-                        
-                      </select> -->
+
                     </div>
 
                     <div class="form-group">

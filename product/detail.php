@@ -90,14 +90,14 @@
                                                                                                                           } ?>>
                             <label class="custom-file-label" for="productImage">Choose file</label>
                           </div>
-                          
+
                         </div>
                       </div>
                       <div class="form-group col-md-3">
                         <label for="price">Price</label>
                         <input type="text" class="form-control" id="price" placeholder="price" pattern="\d*" maxlength="8" required>
                       </div>
-                     
+
                     </div>
                     <div class="row">
                       <div class="form-group col-md-3">
@@ -108,13 +108,13 @@
                         <label for="medium">Medium</label>
                         <input type="text" class="form-control" id="medium" placeholder="medium" maxlength="100" required>
                       </div>
-                      
+
                     </div>
                     <div class="row">
 
                       <div class="form-group col-md-3">
                         <label for="frame">Frame</label>
-                
+
                         <select class="form-control" id="frame">
                           <option value="" selected>No Frame</option>
                           <option value="Framed">Framed</option>
@@ -127,7 +127,7 @@
                         <input type="text" class="form-control" id="length" placeholder="length" maxlength="6" required>
                       </div>
 
-                      
+
 
                       <div class="form-group col-md-3">
                         <label for="frame">Height(cm)</label>
@@ -149,7 +149,7 @@
 
                       <div class="form-group col-md-3">
                         <label for="frame">Orientation</label>
-                        
+
                         <select class="form-control" id="orientation" placeholder="showPrice">
                           <option value="" selected>No Orientation</option>
                           <option value="Landscape">Landscape</option>
@@ -197,7 +197,7 @@
                         <input type="date" class="form-control" id="dateOfProduction" placeholder="">
                       </div>
 
-                     
+
                     </div>
 
                     <div class="row">
@@ -231,7 +231,7 @@
                         <img src="" id="url" width="100px" accept="image/png, image/jpeg" />
                       </div>
                     </div>
-                    
+
                   </div>
                   <!-- /.card-body -->
 
@@ -301,9 +301,9 @@
         $("#productName").val(data.productName)
         $("#productDescription").val(data.productDescription)
         $("#price").val(data.price)
-        //$("#shippingInfo").val(data.shippingInfo)
+
         $("#medium").val(data.medium)
-        //$("#signature").val(data.signature)
+
         $("#certificateAuth").val(data.certificateAuth)
         $("#frame").val(data.frame)
         $("#weight").val(data.weight)
@@ -318,8 +318,7 @@
         $("#height").val(data.height);
         $("#logistics").val(data.logistics);
 
-        //$("#productCity").val(data.productCity);
-        //$("#color").val(data.color);
+
         $("#orientation").val(data.orientation);
         $("#material").val(data.material);
         $("#showPrice").val(data.showPrice);
@@ -336,10 +335,6 @@
         fileUpload = {
           url: data.productImage,
         };
-
-        // fileUpload2 = {
-        //   signature: data.signature
-        // }
 
         $("#url").attr('src', data.productImage);
 
@@ -359,12 +354,12 @@
         productName: $("#productName").val(),
         productDescription: $("#productDescription").val(),
         productImage: (fileUpload) ? fileUpload.url : '',
-        //signature: fileUpload2.signature,
+       
         price: $("#price").val(),
-        //shippingInfo: $("#shippingInfo").val(),
+
         collection: $("#collection").val(),
         medium: $("#medium").val(),
-        //signature: $("#signature").val(),
+  
         certificateAuth: $("#certificateAuth").val(),
         frame: $("#frame").val(),
         weight: $("#weight").val(),
@@ -377,7 +372,7 @@
         breadth: $("#breadth").val(),
         height: $("#height").val(),
 
-        //productCity: $("#productCity").val(),
+
         isWonderRoom: $("#isWonderRoom").val(),
         isViewRoom: $("#isViewRoom").val(),
         orientation: $("#orientation").val(),
@@ -484,28 +479,6 @@
       }
 
     }, false);
-
-    // document.getElementById("signature").addEventListener("change", function(event) {
-    //   var files = document.getElementById("signature").files;
-    //   if(files[0].size > 2097152){
-    //    alert("File is too big!");
-    //    files.value = "";
-    //    return;
-    //   };
-
-    //   var allowedExtensions = 
-    //                 /(\.jpg|\.jpeg|\.png|\.gif)$/i;
-    //   if (!allowedExtensions.exec(files[0].name)) {
-    //     alert("File must be image type");
-    //     files.value = "";
-    //     return;
-    //   } 
-    //   if (files.length) {
-    //     upload_func_sign(files[0])
-    //   }
-
-    // }, false);
-
 
     function __init_call() {
 

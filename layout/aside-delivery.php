@@ -50,7 +50,7 @@
                         <i class="nav-icon fas fa-arrow-left"></i>
                         <p>
                             Logout
-                            <!-- <i class="right fas fa-angle-left"></i> -->
+                        
                         </p>
                     </a>
 

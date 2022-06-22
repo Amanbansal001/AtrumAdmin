@@ -59,7 +59,7 @@
                                                                                                                       } ?>>
                           <label class="custom-file-label" for="profilePic">Choose file</label>
                         </div>
-                       
+
                       </div>
                     </div>
 
@@ -70,28 +70,28 @@
 
                     <div class="form-group">
                       <label for="nationality">Nationality</label>
-                      
+
                       <select id="nationality" class="form-control" required></select>
-                      
+
                     </div>
 
                     <div class="form-group">
                       <label for="country">Country</label>
-                      
+
                       <select id="country" class="form-control" onchange="getState()" required></select>
-                      
+
                     </div>
                     <div class="form-group">
                       <label for="state">State</label>
-                      
+
                       <select id="state" class="form-control" onchange="getCity()" required></select>
-                      
+
                     </div>
                     <div class="form-group">
                       <label for="city">City</label>
-                      
+
                       <select id="city" class="form-control" required></select>
-                      
+
                     </div>
                     <div class="form-group">
                       <label for="bio">Zip Code</label>
@@ -128,7 +128,7 @@
                       <input type="text" class="form-control" id="password" placeholder="password">
                     </div>
 
-                    
+
                     <div class="form-group col-md-12 artist">
                       <label for="signature">Signature</label>
                       <div class="input-group">
@@ -228,23 +228,20 @@
         var data = res.data.fetch;
         $("#roleType").val(data.roleType)
         $("#name").val(data.name)
-        //$("#country :selected").text(data.country)
+
         $("#bio").val(data.bio)
         $("#email").val(data.email)
-        //$("#profilePic").val(data.profilePic)
+
         $("#countryCode").val(data.countryCode)
         $("#phone").val(data.phone)
         $("#commission").val(data.comission)
-        //$("#signature").val(data.signature)
-        // $("#city :selected").text(data.city)
-        // $("#state :selected").text(data.state)
         $("#zipCode").val(data.zipCode)
         $("#address").val(data.address)
         $("#status").val(data.status)
         $("#isWonderRoom").val(data.isWonderRoom);
         $("#country :selected").text(data.country);
         $("#nationality :selected").text(data.nationality);
-        //$("#country").html("<option value='"+data.country+"'>"+data.country+"</option>")
+
         $("#city").html("<option value='" + data.city + "'>" + data.city + "</option>")
         $("#state").html("<option value='" + data.state + "'>" + data.state + "</option>")
 
@@ -316,8 +313,6 @@
       __ajax_http_upload("upload", formData, [], "POST", "upload", function(res) {
         fileUpload = res.data;
         fileUpload.url = API_URL + fileUpload.filename;
-
-        //$("#url").attr('src', fileUpload.url);
       });
     }
 

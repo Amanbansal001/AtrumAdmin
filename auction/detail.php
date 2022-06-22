@@ -60,23 +60,6 @@
                       <input type="text" class="form-control" id="price" placeholder="Price" maxlength="8" required>
                     </div>
 
-
-
-                    <!-- <div class="form-group">
-                      <label for="startDate">Start Date</label>
-                      <input type="date" class="form-control" id="startDate" placeholder="startDate" required>
-                    </div>
-
-                    <div class="form-group">
-                      <label for="expiryDate">End Date</label>
-                      <input type="date" class="form-control" id="expiryDate" placeholder="expiryDate" required>
-                    </div> -->
-
-
-                    <!-- <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                  </div> -->
                   </div>
                   <!-- /.card-body -->
 
@@ -133,8 +116,6 @@
       }
       __ajax_http("auction/" + pkId, null, [], "GET", "auction", function(res) {
         $("#productId").val(res.data.fetch.productId)
-        // $("#expiryDate").val(res.data.fetch.expiryDate);
-        // $("#startDate").val(res.data.fetch.startDate);
         $("#price").val(res.data.fetch.price);
         $("#auctionNameId").val(res.data.fetch.auctionNameId);
       });
@@ -147,8 +128,6 @@
 
       var data = {
         productId: $("#productId").val(),
-        // expiryDate: $("#expiryDate").val(),
-        // startDate: $("#startDate").val(),
         auctionNameId: $("#auctionId").val(),
         price: $("#price").val()
 

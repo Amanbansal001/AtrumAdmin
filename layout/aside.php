@@ -30,7 +30,7 @@
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashbaord
-                            <!-- <i class="right fas fa-angle-left"></i> -->
+                           
                         </p>
                     </a>
 
@@ -267,12 +267,7 @@
                                 <p>State List</p>
                             </a>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a href="/city/list.php" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>City List</p>
-                            </a>
-                        </li> -->
+                       
 
                     </ul>
                 </li>
@@ -281,7 +276,7 @@
                         <i class="nav-icon fas fa-arrow-left"></i>
                         <p>
                             Logout
-                            <!-- <i class="right fas fa-angle-left"></i> -->
+                            
                         </p>
                     </a>
 

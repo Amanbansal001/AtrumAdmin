@@ -116,7 +116,7 @@
         $("#country").val(data.country)
         $("#bio").val(data.bio)
         $("#email").val(data.email)
-        //$("#profilePic").val(data.profilePic)
+
         $("#countryCode").val(data.countryCode)
         $("#phone").val(data.phone)
         $("#commission").val(data.comission)
@@ -154,7 +154,7 @@
         country: $("#country").val(),
         bio: $("#bio").val(),
         email: $("#email").val(),
-        //profilePic:$("#profilePic").val(),
+
         countryCode: $("#countryCode").val(),
         phone: $("#phone").val(),
         comission: $("#commission").val(),

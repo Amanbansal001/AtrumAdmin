@@ -51,7 +51,7 @@
 
                     <div class="form-group">
                       <label for="country">To Country</label>
-                      <!-- <input type="text" class="form-control" id="toCity" placeholder="toCity" required> -->
+
                       <select id="country" class="form-control" onchange="getState()"></select>
                     </div>
 
@@ -62,13 +62,10 @@
 
                     <div class="form-group">
                       <label for="city">To City</label>
-                      <select id="city" class="form-control" ></select>
+                      <select id="city" class="form-control"></select>
                     </div>
 
-                    <!-- <div class="form-group">
-                      <label for="userId">To City</label>
-                      <input type="text" class="form-control" id="toCity" placeholder="toCity" required>
-                    </div> -->
+
 
                     <div class="form-group">
                       <label for="userId">Price</label>
@@ -93,11 +90,11 @@
                   <?php
                   $heading = "Shipping Listing";
                   $dtTagLine = "Atrumart Shipping Listing";
-                  $columns = ["id", "fromCity","toCity","price"];
-                  $columnsFace = ["id", "From City","To City","Price"];
-                  $apiCall = "artworksShipping?productId=".$_GET["id"];
-                  $isTblAdd=false;
-                  $actionDel=true;
+                  $columns = ["id", "fromCity", "toCity", "price"];
+                  $columnsFace = ["id", "From City", "To City", "Price"];
+                  $apiCall = "artworksShipping?productId=" . $_GET["id"];
+                  $isTblAdd = false;
+                  $actionDel = true;
                   require_once(__DIR__ . '/../layout/global/table.php');
                   ?>
 
@@ -126,14 +123,14 @@
     let fileUpload;
 
     $('form#addEdit').submit(function(e) {
-      
+
       e.preventDefault();
       // or return false;
       validateData(e);
     });
 
     $('form#shipping').submit(function(e) {
-     
+
       e.preventDefault();
       // or return false;
       validateDataShipping(e);
@@ -152,8 +149,8 @@
     }
 
     function toProduct(res) {
-      
-      goto('shipping.php?id='+getParameterByName("id"));
+
+      goto('shipping.php?id=' + getParameterByName("id"));
     }
 
     function getData() {
@@ -163,7 +160,7 @@
       }
       __ajax_http("products/" + pkId, null, [], "GET", "product", function(res) {
         var data = res.data.fetch;
-      
+
 
         $("#fromCountry").val(data.user.country);
         $("#fromCity").val(data.user.city);
@@ -240,8 +237,8 @@
       });
     }
 
-    function getState(){
-      __ajax_http("state?country_id="+document.getElementById("country").value, null, [], "GET", "state", function(res) {
+    function getState() {
+      __ajax_http("state?country_id=" + document.getElementById("country").value, null, [], "GET", "state", function(res) {
         var data = res.data.fetch;
         var html = "<option>Select</option>";
         data.forEach((e, idx) => {
@@ -252,8 +249,8 @@
       });
     }
 
-    function getCity(){
-      __ajax_http("city?state_id="+document.getElementById("state").value, null, [], "GET", "city", function(res) {
+    function getCity() {
+      __ajax_http("city?state_id=" + document.getElementById("state").value, null, [], "GET", "city", function(res) {
         var data = res.data.fetch;
         var html = "<option>Select</option>";
         data.forEach((e, idx) => {
@@ -271,7 +268,7 @@
       __ajax_http_upload("upload", formData, [], "POST", "upload", function(res) {
         fileUpload = res.data;
         fileUpload.url = API_URL + fileUpload.filename;
-        
+
         $("#url").attr('src', fileUpload.url);
       });
     }
@@ -279,33 +276,28 @@
     function makeDataShipping() {
 
       var pkId = getParameterByName("id");
-      let toCity= $("#city").val();
-      let check = tableData.find(e=>e.toCity==toCity);
-      if(check){alert(`City already mapped`);return;}
+      let toCity = $("#city").val();
+      let check = tableData.find(e => e.toCity == toCity);
+      if (check) {
+        alert(`City already mapped`);
+        return;
+      }
 
       var data = {
         productId: pkId,
         fromCity: $("#fromCity").val(),
         toCity: toCity,
-        price:$("#price").val()
+        price: $("#price").val()
       };
 
       if (pkId) {
-        //data.id = pkId;
+
         __ajax_http("artworksShipping/" + pkId, data, [], "PUT", "product", toProduct);
       } else {
         __ajax_http("artworksShipping", data, [], "POST", "product", toProduct);
       }
       return false;
     }
-
-    // document.getElementById("productImage").addEventListener("change", function(event) {
-    //   var files = document.getElementById("productImage").files;
-    //   if (files.length) {
-    //     upload_func(files[0])
-    //   }
-
-    // }, false);
 
 
     fetchOptions();
